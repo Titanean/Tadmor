@@ -6,10 +6,14 @@ Tadmor pulls the latest data from the NASA Exoplanet Archive — currently 6,000
 
 ## Features
 
-- **Catalog** — browse the full planet list with sort, search, filter, and bookmark; per-planet 2D icons sketch the body at a glance.
-- **System detail** — see all planets around a host star on a single page, with the host's spectral / luminosity context.
-- **Star map** — a 3D point cloud of every catalogued host star, sized and tinted by spectral type and luminosity.
-- **Planet detail** — a full-screen procedural globe with atmosphere ray-marching, ring photometry, cloud overlays, and per-planet surface bakes. Hapke / opposition surge for airless rocky bodies; Chandrasekhar single-scattering for rings; chevron jets for Venus-class and small sub-Neptune cloud decks; brown / L dwarf surface variants; circumbinary lighting for the ~30 catalogued circumbinary planets.
+- **Catalog** — browse the full planet list with search, multi-axis filters (composition, temperature, mass class, host spectral type, discovery method, data completeness), and sort. Per-planet 2D icons sketch the body at a glance.
+- **Candidates** — separate tabs for confirmed planets, TESS / Kepler / K2 candidates, and false positives, with dispositions kept up to date by the sync.
+- **Bookmarks** — save any planet; the catalog row gets a gold-edge highlight and a saved-only filter is one tap away. The app snapshots the planet's parameters at bookmark time.
+- **Update tracking** — when a bookmarked planet's catalog parameters change after a sync (a refined mass measurement, a new temperature, a disposition flip), the card shows an "_n_ updated" badge and the updated fields are diffed against the snapshot.
+- **Background sync** — WorkManager periodically pulls the latest data from the NASA Exoplanet Archive so the local catalog stays current without manual refresh.
+- **System view** — every planet around a host star on a single page, with the host's spectral / luminosity context, an orbital diagram, and a system planet strip.
+- **Star map** — a 3D point cloud of every catalogued host star, sized and tinted by spectral type and luminosity; tap a star to enter its system.
+- **Planet detail** — a full-screen procedural 3D globe. Terrestrial worlds get composition-driven surface bakes with terrain, craters, polar caps, oceans, and lava; gas and ice giants get banded cloud decks with storm vortices and ring systems; everything is lit through a ray-marched atmosphere with per-planet Rayleigh / Mie / ozone / fog scattering. Brown dwarf and white dwarf host stars get their own surface and limb treatments distinct from main-sequence stars.
 
 ## Built with
 
