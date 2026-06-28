@@ -30,3 +30,10 @@ plans/
 
 # Editor workspace
 *.code-workspace
+
+# Release signing — NEVER commit. Lose this keystore and you can never
+# publish a signed update; users on the old version would be unable to
+# install the new one. Back it up out-of-band (password manager, etc).
+*.jks
+*.keystore
+keystore.properties

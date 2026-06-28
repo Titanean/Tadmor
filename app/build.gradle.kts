@@ -1,9 +1,21 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+}
+
+// Release signing config is loaded from keystore.properties in the project
+// root, which is gitignored. If the file is missing (CI build without
+// secrets, fresh clone) the release build will fall back to no signing —
+// which assembleRelease will then refuse to complete, surfacing the
+// missing-keystore error explicitly rather than producing an unsigned APK.
+val keystoreProps = Properties().apply {
+    val f = rootProject.file("keystore.properties")
+    if (f.exists()) f.inputStream().use { load(it) }
 }
 
 android {
@@ -18,9 +30,29 @@ android {
         versionName = "1.0.0"
     }
 
+    signingConfigs {
+        create("release") {
+            if (keystoreProps.containsKey("storeFile")) {
+                storeFile = rootProject.file(keystoreProps["storeFile"] as String)
+                storePassword = keystoreProps["storePassword"] as String
+                keyAlias = keystoreProps["keyAlias"] as String
+                keyPassword = keystoreProps["keyPassword"] as String
+            }
+        }
+    }
+
     buildTypes {
         release {
+            // Only attach the signing config when keystore.properties was
+            // actually loaded. Without the guard, a missing keystore would
+            // crash configuration on every gradle invocation (including
+            // debug builds and IDE sync); with it, only `assembleRelease`
+            // actually fails, which is what we want.
+            if (keystoreProps.containsKey("storeFile")) {
+                signingConfig = signingConfigs.getByName("release")
+            }
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
