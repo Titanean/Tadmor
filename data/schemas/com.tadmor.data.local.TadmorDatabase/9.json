@@ -1,0 +1,400 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 9,
+    "identityHash": "2b177c173fc34b5303e2f331c3c287ba",
+    "entities": [
+      {
+        "tableName": "planets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pl_name` TEXT NOT NULL, `hostname` TEXT NOT NULL, `massJupiter` REAL, `massJupiterLimit` INTEGER, `massEarth` REAL, `massEarthLimit` INTEGER, `radiusEarth` REAL, `radiusEarthLimit` INTEGER, `semiMajorAxisAU` REAL, `semiMajorAxisLimit` INTEGER, `orbitalPeriodDays` REAL, `orbitalPeriodLimit` INTEGER, `eccentricity` REAL, `eccentricityLimit` INTEGER, `inclination` REAL, `inclinationLimit` INTEGER, `longOfPeriapsis` REAL, `longOfPeriapsisLimit` INTEGER, `eqTempK` REAL, `eqTempKLimit` INTEGER, `insolationFlux` REAL, `insolationFluxLimit` INTEGER, `densityGCm3` REAL, `densityLimit` INTEGER, `transitMidpointBJD` REAL, `timeOfPeriapsisBJD` REAL, `discoveryMethod` TEXT, `discoveryYear` INTEGER, `cbFlag` INTEGER NOT NULL DEFAULT 0, `syName` TEXT, PRIMARY KEY(`pl_name`), FOREIGN KEY(`hostname`) REFERENCES `stars`(`hostname`) ON UPDATE NO ACTION ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED)",
+        "fields": [
+          {
+            "fieldPath": "plName",
+            "columnName": "pl_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hostname",
+            "columnName": "hostname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "massJupiter",
+            "columnName": "massJupiter",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "massJupiterLimit",
+            "columnName": "massJupiterLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "massEarth",
+            "columnName": "massEarth",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "massEarthLimit",
+            "columnName": "massEarthLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "radiusEarth",
+            "columnName": "radiusEarth",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "radiusEarthLimit",
+            "columnName": "radiusEarthLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "semiMajorAxisAU",
+            "columnName": "semiMajorAxisAU",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "semiMajorAxisLimit",
+            "columnName": "semiMajorAxisLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "orbitalPeriodDays",
+            "columnName": "orbitalPeriodDays",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "orbitalPeriodLimit",
+            "columnName": "orbitalPeriodLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "eccentricity",
+            "columnName": "eccentricity",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "eccentricityLimit",
+            "columnName": "eccentricityLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "inclination",
+            "columnName": "inclination",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "inclinationLimit",
+            "columnName": "inclinationLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "longOfPeriapsis",
+            "columnName": "longOfPeriapsis",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "longOfPeriapsisLimit",
+            "columnName": "longOfPeriapsisLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "eqTempK",
+            "columnName": "eqTempK",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "eqTempKLimit",
+            "columnName": "eqTempKLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "insolationFlux",
+            "columnName": "insolationFlux",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "insolationFluxLimit",
+            "columnName": "insolationFluxLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "densityGCm3",
+            "columnName": "densityGCm3",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "densityLimit",
+            "columnName": "densityLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "transitMidpointBJD",
+            "columnName": "transitMidpointBJD",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "timeOfPeriapsisBJD",
+            "columnName": "timeOfPeriapsisBJD",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "discoveryMethod",
+            "columnName": "discoveryMethod",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "discoveryYear",
+            "columnName": "discoveryYear",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "cbFlag",
+            "columnName": "cbFlag",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "syName",
+            "columnName": "syName",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "pl_name"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_planets_hostname",
+            "unique": false,
+            "columnNames": [
+              "hostname"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planets_hostname` ON `${TABLE_NAME}` (`hostname`)"
+          },
+          {
+            "name": "index_planets_discoveryMethod",
+            "unique": false,
+            "columnNames": [
+              "discoveryMethod"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planets_discoveryMethod` ON `${TABLE_NAME}` (`discoveryMethod`)"
+          },
+          {
+            "name": "index_planets_discoveryYear",
+            "unique": false,
+            "columnNames": [
+              "discoveryYear"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planets_discoveryYear` ON `${TABLE_NAME}` (`discoveryYear`)"
+          },
+          {
+            "name": "index_planets_eqTempK",
+            "unique": false,
+            "columnNames": [
+              "eqTempK"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planets_eqTempK` ON `${TABLE_NAME}` (`eqTempK`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "stars",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "hostname"
+            ],
+            "referencedColumns": [
+              "hostname"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "stars",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hostname` TEXT NOT NULL, `spectralType` TEXT, `starTeffK` REAL, `starTeffKLimit` INTEGER, `starRadiusSolar` REAL, `starRadiusLimit` INTEGER, `starMassSolar` REAL, `starMassLimit` INTEGER, `starLogLuminosity` REAL, `starLogLuminosityLimit` INTEGER, `rightAscensionDeg` REAL, `declinationDeg` REAL, `distancePc` REAL, `planetCount` INTEGER, `hdName` TEXT, `hipName` TEXT, `ticId` TEXT, `syName` TEXT, `sySnum` INTEGER, `isPrimary` INTEGER NOT NULL DEFAULT 1, `metallicity` REAL, `metallicityLimit` INTEGER, `age` REAL, `ageLimit` INTEGER, `logg` REAL, `loggLimit` INTEGER, `rotationPeriodDays` REAL, PRIMARY KEY(`hostname`))",
+        "fields": [
+          {
+            "fieldPath": "hostname",
+            "columnName": "hostname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "spectralType",
+            "columnName": "spectralType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "starTeffK",
+            "columnName": "starTeffK",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "starTeffKLimit",
+            "columnName": "starTeffKLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "starRadiusSolar",
+            "columnName": "starRadiusSolar",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "starRadiusLimit",
+            "columnName": "starRadiusLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "starMassSolar",
+            "columnName": "starMassSolar",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "starMassLimit",
+            "columnName": "starMassLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "starLogLuminosity",
+            "columnName": "starLogLuminosity",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "starLogLuminosityLimit",
+            "columnName": "starLogLuminosityLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "rightAscensionDeg",
+            "columnName": "rightAscensionDeg",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "declinationDeg",
+            "columnName": "declinationDeg",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "distancePc",
+            "columnName": "distancePc",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "planetCount",
+            "columnName": "planetCount",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "hdName",
+            "columnName": "hdName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "hipName",
+            "columnName": "hipName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "ticId",
+            "columnName": "ticId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "syName",
+            "columnName": "syName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "sySnum",
+            "columnName": "sySnum",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "isPrimary",
+            "columnName": "isPrimary",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "1"
+          },
+          {
+            "fieldPath": "metallicity",
+            "columnName": "metallicity",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "metallicityLimit",
+            "columnName": "metallicityLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "age",
+            "columnName": "age",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "ageLimit",
+            "columnName": "ageLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "logg",
+            "columnName": "logg",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "loggLimit",
+            "columnName": "loggLimit",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "rotationPeriodDays",
+            "columnName": "rotationPeriodDays",
+            "affinity": "REAL"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "hostname"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_stars_spectralType",
+            "unique": false,
+            "columnNames": [
+              "spectralType"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_stars_spectralType` ON `${TABLE_NAME}` (`spectralType`)"
+          },
+          {
+            "name": "index_stars_distancePc",
+            "unique": false,
+            "columnNames": [
+              "distancePc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_stars_distancePc` ON `${TABLE_NAME}` (`distancePc`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2b177c173fc34b5303e2f331c3c287ba')"
+    ]
+  }
+}

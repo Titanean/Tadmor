@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Tadmor" parent="android:Theme.Material.NoActionBar">
+        <!-- windowBackground is what shows through SurfaceView punch-holes
+             during the brief window before the EGL surface starts producing
+             frames. Black so the planet reveal animation, the star map, and
+             the orbital view all start from a black void rather than the
+             app's dark-blue surface colour. The visible app surface (Compose
+             content) still uses ExoColors.background — windowBackground only
+             leaks through where nothing else paints. -->
+        <item name="android:windowBackground">#000000</item>
+        <item name="android:statusBarColor">#06080F</item>
+        <item name="android:navigationBarColor">#06080F</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

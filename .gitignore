@@ -1,0 +1,32 @@
+.gradle/
+build/
+*/build/
+.idea/
+.kotlin/
+.claude/
+local.properties
+*.iml
+
+# Pre-port shader / WebGL prototypes — kept locally as reference
+atmosphere.html
+terrestrial.html
+gas giant.html
+sun shader.txt
+
+# Real-planet reference textures — possibly NASA-licensed, kept local only
+earth-colour.jpg
+earth-height.jpg
+jupiter-colour.jpg
+neptune-colour.jpg
+
+# Design / inspiration reference images — not loaded at runtime
+AstroNiki.png
+DESIGN REFERENCE.png
+
+# In-progress planning docs — kept locally, not part of the public repo
+PLAN.md
+PLAN_*.md
+plans/
+
+# Editor workspace
+*.code-workspace

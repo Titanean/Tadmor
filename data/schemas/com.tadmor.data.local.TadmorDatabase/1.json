@@ -1,0 +1,231 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "02789402e4f31e6945fe19a9d79ed515",
+    "entities": [
+      {
+        "tableName": "planets",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`pl_name` TEXT NOT NULL, `hostname` TEXT NOT NULL, `massJupiter` REAL, `massEarth` REAL, `radiusEarth` REAL, `semiMajorAxisAU` REAL, `orbitalPeriodDays` REAL, `eccentricity` REAL, `inclination` REAL, `eqTempK` REAL, `insolationFlux` REAL, `densityGCm3` REAL, `discoveryMethod` TEXT, `discoveryYear` INTEGER, PRIMARY KEY(`pl_name`), FOREIGN KEY(`hostname`) REFERENCES `stars`(`hostname`) ON UPDATE NO ACTION ON DELETE CASCADE DEFERRABLE INITIALLY DEFERRED)",
+        "fields": [
+          {
+            "fieldPath": "plName",
+            "columnName": "pl_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hostname",
+            "columnName": "hostname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "massJupiter",
+            "columnName": "massJupiter",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "massEarth",
+            "columnName": "massEarth",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "radiusEarth",
+            "columnName": "radiusEarth",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "semiMajorAxisAU",
+            "columnName": "semiMajorAxisAU",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "orbitalPeriodDays",
+            "columnName": "orbitalPeriodDays",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "eccentricity",
+            "columnName": "eccentricity",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "inclination",
+            "columnName": "inclination",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "eqTempK",
+            "columnName": "eqTempK",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "insolationFlux",
+            "columnName": "insolationFlux",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "densityGCm3",
+            "columnName": "densityGCm3",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "discoveryMethod",
+            "columnName": "discoveryMethod",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "discoveryYear",
+            "columnName": "discoveryYear",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "pl_name"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_planets_hostname",
+            "unique": false,
+            "columnNames": [
+              "hostname"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planets_hostname` ON `${TABLE_NAME}` (`hostname`)"
+          },
+          {
+            "name": "index_planets_discoveryMethod",
+            "unique": false,
+            "columnNames": [
+              "discoveryMethod"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planets_discoveryMethod` ON `${TABLE_NAME}` (`discoveryMethod`)"
+          },
+          {
+            "name": "index_planets_discoveryYear",
+            "unique": false,
+            "columnNames": [
+              "discoveryYear"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planets_discoveryYear` ON `${TABLE_NAME}` (`discoveryYear`)"
+          },
+          {
+            "name": "index_planets_eqTempK",
+            "unique": false,
+            "columnNames": [
+              "eqTempK"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_planets_eqTempK` ON `${TABLE_NAME}` (`eqTempK`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "stars",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "hostname"
+            ],
+            "referencedColumns": [
+              "hostname"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "stars",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`hostname` TEXT NOT NULL, `spectralType` TEXT, `starTeffK` REAL, `starRadiusSolar` REAL, `starMassSolar` REAL, `starLogLuminosity` REAL, `rightAscensionDeg` REAL, `declinationDeg` REAL, `distancePc` REAL, `planetCount` INTEGER, PRIMARY KEY(`hostname`))",
+        "fields": [
+          {
+            "fieldPath": "hostname",
+            "columnName": "hostname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "spectralType",
+            "columnName": "spectralType",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "starTeffK",
+            "columnName": "starTeffK",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "starRadiusSolar",
+            "columnName": "starRadiusSolar",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "starMassSolar",
+            "columnName": "starMassSolar",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "starLogLuminosity",
+            "columnName": "starLogLuminosity",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "rightAscensionDeg",
+            "columnName": "rightAscensionDeg",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "declinationDeg",
+            "columnName": "declinationDeg",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "distancePc",
+            "columnName": "distancePc",
+            "affinity": "REAL"
+          },
+          {
+            "fieldPath": "planetCount",
+            "columnName": "planetCount",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "hostname"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_stars_spectralType",
+            "unique": false,
+            "columnNames": [
+              "spectralType"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_stars_spectralType` ON `${TABLE_NAME}` (`spectralType`)"
+          },
+          {
+            "name": "index_stars_distancePc",
+            "unique": false,
+            "columnNames": [
+              "distancePc"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_stars_distancePc` ON `${TABLE_NAME}` (`distancePc`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '02789402e4f31e6945fe19a9d79ed515')"
+    ]
+  }
+}
