@@ -62,6 +62,10 @@ All exoplanet, star, and candidate data come from the [NASA Exoplanet Archive](h
 - [`DECISIONS.md`](DECISIONS.md) — phase-by-phase log of architecture and rendering decisions
 - [`CLAUDE.md`](CLAUDE.md) — coding rules and contributing notes
 
+## Notice
+
+Tadmor was 100% vibe coded — every line of source was written by [Claude](https://www.anthropic.com/claude) (Anthropic's AI assistant) under direction and iteration from me. I designed the app, drove every architectural and visual decision, and tested every change on-device, but I did not hand-write the code myself.
+
 ## License
 
 Apache 2.0 — see [`LICENSE`](LICENSE).
