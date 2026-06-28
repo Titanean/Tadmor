@@ -1,8 +1,19 @@
+<p align="center">
+<img src="icon no background.svg" width="22%" /> 
+</p>
+
 # Tadmor
 
 An exoplanet database and tracker with procedural visualisations.
 
 Tadmor pulls the latest data from the NASA Exoplanet Archive — currently 6,000+ confirmed planets plus TESS / Kepler / K2 candidates — and renders each one as a 3D globe built procedurally from its measured parameters. The same physical inputs that drive the classifier (mass, radius, temperature, host spectral type, atmospheric composition, orbital geometry) drive the look of the planet, its host star, and the orbital diagram. Nothing is a photograph.
+
+<p align="center">
+  <img src="docs/screenshots/Screenshot 18.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 23.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 21.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 19.jpg" width="22%" />
+</p>
 
 ## Features
 
@@ -14,6 +25,13 @@ Tadmor pulls the latest data from the NASA Exoplanet Archive — currently 6,000
 - **System view** — every planet around a host star on a single page, with the host's spectral / luminosity context, an orbital diagram, and a system planet strip.
 - **Star map** — a 3D point cloud of every catalogued host star, sized and tinted by spectral type and luminosity; tap a star to enter its system.
 - **Planet detail** — a full-screen procedural 3D globe. Terrestrial worlds get composition-driven surface bakes with terrain, craters, polar caps, oceans, and lava; gas and ice giants get banded cloud decks with storm vortices and ring systems; everything is lit through a ray-marched atmosphere with per-planet Rayleigh / Mie / ozone / fog scattering. Brown dwarf and white dwarf host stars get their own surface and limb treatments distinct from main-sequence stars.
+
+<p align="center">
+  <img src="docs/screenshots/Screenshot 24.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 20.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 22.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 23.jpg" width="22%" />
+</p>
 
 ## Built with
 
@@ -47,3 +65,16 @@ All exoplanet, star, and candidate data come from the [NASA Exoplanet Archive](h
 ## License
 
 Apache 2.0 — see [`LICENSE`](LICENSE).
+
+## Gallery
+
+<p align="center">
+  <img src="docs/screenshots/Screenshot 17.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 12.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 2.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 13.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 6.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 7.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 16.jpg" width="22%" />
+  <img src="docs/screenshots/Screenshot 26.jpg" width="22%" />
+</p>
