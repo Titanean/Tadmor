@@ -37,3 +37,8 @@ plans/
 *.jks
 *.keystore
 keystore.properties
+
+# Release APK output (Android Studio's "Generate Signed APK" default
+# destination). The APK belongs in GitHub Releases, not in the repo.
+app/release/
+*.apk
